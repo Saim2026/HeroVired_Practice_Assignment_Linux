@@ -1,0 +1,18 @@
+# Create backup directory
+sudo mkdir -p /backups
+sudo chmod 755 /backups
+
+# Apache placeholder directories and test files
+sudo mkdir -p /etc/httpd /var/www/html
+echo "Apache test config" | sudo tee /etc/httpd/test.conf
+echo "Apache test page" | sudo tee /var/www/html/index.html
+
+# Nginx placeholder directories and test files
+sudo mkdir -p /etc/nginx /usr/share/nginx/html
+echo "Nginx test config" | sudo tee /etc/nginx/nginx.conf
+echo "Nginx test page" | sudo tee /usr/share/nginx/html/index.html
+
+# Create log files
+sudo touch /var/log/apache_backup.log /var/log/apache_backup_verify.log
+sudo touch /var/log/nginx_backup.log /var/log/nginx_backup_verify.log
+sudo chmod 644 /var/log/*_backup*.log
