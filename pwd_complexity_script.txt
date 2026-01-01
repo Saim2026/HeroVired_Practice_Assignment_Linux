@@ -1,0 +1,16 @@
+# Enforce Password Complexity
+
+# Run this command to open 'common-password' file in nano
+sudo nano /etc/pam.d/common-password
+
+# Add this line
+password requisite pam_pwquality.so retry=3 minlen=8 ucredit=-1 lcredit=-1 dcredit=-1
+
+# Meaning: Minimum 8 characters, Uppercase, lowercase, digit required
+
+# This ensures both Sarah and Mike to follow the standards to change theor passwords each month
+
+
+# Enforce Password Expiration (30 Days)
+sudo chage -M 30 sarah
+sudo chage -M 30 mike
