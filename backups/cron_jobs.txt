@@ -1,0 +1,13 @@
+# Cron Job Configuration:
+
+sudo crontab -e
+
+# Apache backup every Tuesday at 12:00 AM
+0 0 * * 2 /usr/local/bin/apache_backup.sh
+
+# Nginx backup every Tuesday at 12:00 AM
+0 0 * * 2 /usr/local/bin/nginx_backup.sh
+
+
+# Verify cron:
+sudo crontab -l
