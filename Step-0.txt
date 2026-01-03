@@ -1,3 +1,6 @@
+# Update the Server (Always start from updating the Server)
+sudo apt upgrade -y
+
 # Create backup directory
 sudo mkdir -p /backups
 sudo chmod 755 /backups
@@ -6,6 +9,7 @@ sudo chmod 755 /backups
 sudo mkdir -p /etc/httpd /var/www/html
 echo "Apache test config" | sudo tee /etc/httpd/test.conf
 echo "Apache test page" | sudo tee /var/www/html/index.html
+(OR install both Apache & Nginx Servers first)
 
 # Nginx placeholder directories and test files
 sudo mkdir -p /etc/nginx /usr/share/nginx/html
