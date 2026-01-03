@@ -25,3 +25,4 @@ echo "$(date) - Nginx backup created: $BACKUP_FILE" | sudo tee -a /var/log/nginx
 
 # Verify backup contents
 sudo tar -tzf $BACKUP_FILE | sudo tee -a /var/log/nginx_backup_verify.log
+echo "----------------------------------"
